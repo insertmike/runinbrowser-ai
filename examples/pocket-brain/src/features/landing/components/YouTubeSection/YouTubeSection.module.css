@@ -1,0 +1,224 @@
+.youtubeSection {
+  background: var(--color-background);
+  padding: 80px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: clamp(28px, 6vw, 42px);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-md) 0;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: clamp(16px, 4vw, 18px);
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 968px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.videoContainer {
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.videoPlaceholder {
+  padding: 60px var(--spacing-xl);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  min-height: 300px;
+  justify-content: center;
+}
+
+.placeholderIcon {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+.placeholderTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.placeholderText {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 400px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.supportCard,
+.featuresCard {
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: var(--spacing-xl);
+}
+
+.supportTitle,
+.featuresTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.supportText {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+.supportText strong {
+  color: var(--color-text);
+}
+
+.subscribeSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.subscribeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: #ff0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.subscribeButton:hover {
+  background: #cc0000;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.subscribeNote {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  text-align: center;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.featuresList li {
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  position: relative;
+  padding-left: 20px;
+}
+
+.featuresList li::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-size: 12px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .youtubeSection {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .supportCard,
+  .featuresCard {
+    padding: var(--spacing-lg);
+  }
+
+  .videoPlaceholder {
+    padding: 40px var(--spacing-lg);
+    min-height: 250px;
+  }
+
+  .subscribeButton {
+    font-size: 15px;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}

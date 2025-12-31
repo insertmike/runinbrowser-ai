@@ -1,0 +1,129 @@
+.newsletterSection {
+  padding: 60px 24px;
+  background: var(--color-surface-elevated);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.container {
+  max-width: 600px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.description {
+  margin: 0;
+  font-size: 18px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formContainer {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 28px;
+  text-align: center;
+}
+
+.successMessage {
+  padding: 20px;
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.successIcon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.successText {
+  color: var(--color-text);
+  margin: 0;
+  font-weight: 600;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.formMobile {
+  flex-direction: column;
+}
+
+.input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-elevated);
+  color: var(--color-text);
+  font-size: 15px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--color-accent);
+}
+
+.inputError {
+  border-color: #f44336;
+}
+
+.input:disabled {
+  opacity: 0.7;
+}
+
+.button {
+  white-space: nowrap;
+}
+
+.buttonSubmitting {
+  background: #ccc !important;
+}
+
+.errorMessage {
+  font-size: 14px;
+  color: #f44336;
+  margin: 12px 0 0 0;
+  text-align: center;
+}
+
+.footerText {
+  color: var(--color-text-muted);
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.footerSmall {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 16px 0 0 0;
+  opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .newsletterSection {
+    padding: 40px 16px;
+  }
+}

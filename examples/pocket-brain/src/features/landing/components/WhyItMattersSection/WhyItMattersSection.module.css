@@ -1,0 +1,175 @@
+.whyItMattersSection {
+  padding: 80px 24px;
+  background: linear-gradient(
+    135deg,
+    var(--color-surface-elevated) 0%,
+    var(--color-surface) 50%,
+    var(--color-surface-elevated) 100%
+  );
+  color: var(--color-text);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 107, 107, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(78, 205, 196, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1000px;
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(28px, 6vw, 48px);
+  font-weight: 900;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.description {
+  margin: 0 auto;
+  font-size: clamp(18px, 4vw, 22px);
+  line-height: 1.6;
+  max-width: 700px;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.columnTitle {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 32px;
+  color: var(--color-text);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.problemGradient {
+  background: linear-gradient(135deg, #f44336, #ff8a80);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.solutionGradient {
+  background: linear-gradient(135deg, #4caf50, #81c784);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.items {
+  display: grid;
+  gap: 32px;
+}
+
+.item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: inset 0 2px 0 rgba(244, 67, 54, 0.3);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.solutionItem {
+  box-shadow: inset 0 2px 0 rgba(76, 175, 80, 0.3);
+}
+
+.itemIcon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.itemTitle {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.itemDescription {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.footer {
+  text-align: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 48px 32px;
+}
+
+.footerIcon {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.footerTitle {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+
+.footerDescription {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-size: 18px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 767px) {
+  .whyItMattersSection {
+    padding: 60px 16px;
+  }
+}

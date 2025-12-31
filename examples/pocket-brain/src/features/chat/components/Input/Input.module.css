@@ -1,0 +1,190 @@
+/* Input component styles */
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.input {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  padding-bottom: 52px;
+  /* Space for action toolbar */
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  font-size: var(--font-size-lg);
+  background: var(--color-surface-elevated);
+  color: var(--color-text);
+  transition: var(--transition-fast);
+  font-family: inherit;
+  width: 100%;
+  resize: none;
+  min-height: 96px;
+  /* roomier baseline */
+  max-height: min(50vh, 248px);
+  /* cap height while keeping good space on mobile */
+  line-height: 1.5;
+  overflow-y: scroll;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.actionToolbar {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.leftActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rightActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.iconButton {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.iconButton:hover {
+  background: var(--color-surface);
+}
+
+.sendButton {
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.sendButton:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+}
+
+.sendButton:disabled {
+  background: var(--color-border);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .input {
+    padding: var(--spacing-sm) var(--spacing-md);
+    padding-bottom: 44px;
+    /* Space for action toolbar on mobile */
+    font-size: var(--font-size-lg);
+    /* Prevent iOS zoom on focus (>=16px) */
+    min-height: 104px;
+    /* more vertical space for typing on small screens */
+    max-height: min(60vh, 264px);
+    /* allow more lines but keep under half viewport */
+    line-height: 1.4;
+    /* Tighter line height on mobile */
+  }
+
+  .actionToolbar {
+    left: 8px;
+    right: 8px;
+    bottom: 6px;
+  }
+
+  .sendButton {
+    width: 28px;
+    height: 28px;
+  }
+
+  .sendButton svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .inputWrapper {
+    align-items: flex-end;
+  }
+}
+
+/* Very small screens: let the textarea stack with any external toolbars,
+   but keep the send/stop button anchored to the input */
+@media (max-width: 600px) {
+  .inputWrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--color-surface);
+}
+
+.label {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.error {
+  border-color: var(--color-error);
+}
+
+.error:focus {
+  border-color: var(--color-error);
+  outline: 2px solid var(--color-error);
+  outline-offset: 2px;
+}
+
+.errorMessage {
+  font-size: var(--font-size-sm);
+  color: var(--color-error);
+  margin-top: var(--spacing-xs);
+}

@@ -1,0 +1,179 @@
+.dialogOverlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.dialogContent {
+  background-color: var(--color-surface);
+  border-radius: 16px;
+  box-shadow:
+    hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
+    hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 600px;
+  max-height: 85vh;
+  padding: 32px;
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1001;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.dialogTitle {
+  margin: 0;
+  font-weight: 700;
+  color: var(--color-text);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.dialogDescription {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.accordionRoot {
+  border-radius: 6px;
+  width: 100%;
+}
+
+.accordionItem {
+  overflow: hidden;
+  margin-top: 1px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.accordionItem:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.accordionHeader {
+  display: flex;
+}
+
+.accordionTrigger {
+  background-color: transparent;
+  padding: 16px 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-text);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.accordionTrigger:hover {
+  color: var(--color-primary);
+}
+
+.accordionContent {
+  overflow: hidden;
+  font-size: 15px;
+  color: var(--color-text-muted);
+  background-color: transparent;
+  line-height: 1.6;
+}
+
+.accordionContent[data-state="open"] {
+  animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.accordionContent[data-state="closed"] {
+  animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.accordionContentText {
+  padding-bottom: 20px;
+}
+
+.chevron {
+  width: 16px;
+  height: 16px;
+  color: var(--color-text-muted);
+  transition: transform 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.accordionTrigger[data-state="open"] > .chevron {
+  transform: rotate(180deg);
+}
+
+.dialogClose {
+  font-family: inherit;
+  border-radius: 100%;
+  height: 28px;
+  width: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  transition: all 0.2s;
+}
+
+.dialogClose:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}

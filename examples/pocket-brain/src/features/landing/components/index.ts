@@ -1,0 +1,11 @@
+export { HeroSection } from "./HeroSection/HeroSection";
+export { FeaturesSection } from "./FeaturesSection/FeaturesSection";
+export { WhyItMattersSection } from "./WhyItMattersSection/WhyItMattersSection";
+export { ComparisonSection } from "./ComparisonSection/ComparisonSection";
+export { HowItWorksSection } from "./HowItWorksSection/HowItWorksSection";
+export { RoadmapSection } from "./RoadmapSection/RoadmapSection";
+export { NewsletterSection } from "./NewsletterSection/NewsletterSection";
+export { FAQSection } from "./FAQSection/FAQSection";
+export { CTASection } from "./CTASection/CTASection";
+export { YouTubeSection } from "./YouTubeSection/YouTubeSection";
+export { YouTubeBehindScenesSection } from "./YouTubeBehindScenesSection/YouTubeBehindScenesSection";

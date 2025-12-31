@@ -1,0 +1,97 @@
+{
+  "name": "runinbrowser",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Run AI models in the browser with React hooks",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "generate:model-ids": "tsx scripts/generate-mlc-model-ids.ts",
+    "build:worker": "tsup --config tsup.worker.config.ts",
+    "generate:worker-utils": "tsx scripts/inject-worker-code.ts",
+    "prepare": "npm run generate:model-ids",
+    "prebuild": "npm run generate:model-ids && npm run build:worker && npm run generate:worker-utils",
+    "build": "tsup",
+    "prepublishOnly": "npm run build",
+    "dev": "tsup --watch",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "machine-learning",
+    "browser",
+    "webgpu",
+    "mlc",
+    "web-llm",
+    "client-side-ai",
+    "browser-ml",
+    "inference",
+    "chat",
+    "react",
+    "react-hooks",
+    "typescript",
+    "openai-compatible",
+    "openai-api",
+    "client-side",
+    "offline",
+    "privacy",
+    "local-ai",
+    "edge-ai"
+  ],
+  "author": "Mihail Yonchev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/insertmike/runinbrowser.git"
+  },
+  "homepage": "https://github.com/insertmike/runinbrowser#readme",
+  "bugs": {
+    "url": "https://github.com/insertmike/runinbrowser/issues"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.12",
+    "@types/node": "^24.9.2",
+    "@types/react": "^18.0.0",
+    "eslint": "^9.39.0",
+    "prettier": "^3.6.2",
+    "react": "^18.0.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2"
+  },
+  "dependencies": {
+    "@mlc-ai/web-llm": "0.2.79",
+    "debug": "^4.4.0"
+  }
+}

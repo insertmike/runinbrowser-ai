@@ -1,0 +1,139 @@
+/* Header */
+.header {
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.headerContent {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brandName {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.brandName:hover {
+  opacity: 0.7;
+}
+
+.settingsButton {
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+}
+
+.settingsButton:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.supportButton {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  color: #4b5563;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-right: 4px;
+}
+
+.supportButton:hover {
+  background: #fff1f2;
+  border-color: #fecdd3;
+  color: #e11d48;
+  transform: translateY(-1px);
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color: #e5e7eb;
+  margin: 0 4px;
+}
+
+.supportText {
+  display: inline;
+}
+
+/* Dark mode support */
+:global([data-theme="dark"]) .header {
+  border-bottom-color: #374151;
+  background: #111827;
+}
+
+:global([data-theme="dark"]) .brandName {
+  color: #f9fafb;
+}
+
+:global([data-theme="dark"]) .brandName:hover {
+  opacity: 0.7;
+}
+
+:global([data-theme="dark"]) .settingsButton {
+  color: #9ca3af;
+}
+
+:global([data-theme="dark"]) .settingsButton:hover {
+  background: #1f2937;
+  color: #d1d5db;
+}
+
+:global([data-theme="dark"]) .supportButton {
+  border-color: #374151;
+  color: #d1d5db;
+}
+
+:global([data-theme="dark"]) .supportButton:hover {
+  background: rgba(225, 29, 72, 0.1);
+  border-color: #e11d48;
+  color: #fca5a5;
+}
+
+:global([data-theme="dark"]) .divider {
+  background-color: #374151;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .headerContent {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .brandName {
+    font-size: 16px;
+    white-space: nowrap;
+  }
+}

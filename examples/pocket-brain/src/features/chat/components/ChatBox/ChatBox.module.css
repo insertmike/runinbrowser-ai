@@ -1,0 +1,89 @@
+/* Chat box styles */
+.chatBox {
+  border: none;
+  border-radius: var(--radius-xl);
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: var(--spacing-2xl);
+  background: var(--color-surface-elevated);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Custom scrollbar for chat box */
+.chatBox::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chatBox::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+.chatBox::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-sm);
+}
+
+.chatBox::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .chatBox {
+    padding: var(--spacing-xl);
+  }
+}
+
+:global([data-theme="dark"]) .chatBox {
+  background: transparent;
+}
+
+/* Inner scrollable area and messages layout */
+.chatInner {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Disable scroll when empty state is shown */
+.chatBoxEmpty {
+  overflow: hidden;
+}
+
+.chatInnerEmpty {
+  overflow: hidden;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  flex: 1;
+  min-height: 0;
+}
+
+.scrollToBottom {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.scrollToBottom:hover {
+  background: var(--color-surface-elevated);
+}

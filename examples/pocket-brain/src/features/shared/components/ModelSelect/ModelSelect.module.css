@@ -1,0 +1,363 @@
+/* Clean, production-style model select */
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--color-text);
+  cursor: pointer;
+  min-width: 240px;
+  transition: all 0.15s ease;
+}
+
+.trigger:hover:not(:disabled) {
+  border-color: var(--color-border-hover);
+  background: var(--color-surface);
+}
+
+.trigger:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--shadow-sm); /* Approximate shadow using variable or keep slight custom? Let's use var but maybe just outline */
+}
+
+.trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.triggerCompact {
+  padding: 6px 10px;
+  font-size: 13px;
+  min-width: 160px;
+}
+
+.triggerGhost {
+  background: transparent;
+  border: none;
+  padding: 6px 8px;
+  min-width: auto;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.triggerGhost:hover:not(:disabled) {
+  background: var(--color-surface-hover);
+  border-color: transparent;
+  color: var(--color-text);
+}
+
+.triggerGhost .triggerValue {
+  gap: 4px;
+}
+
+.triggerGhost .icon {
+  margin-left: 2px;
+}
+
+.triggerValue {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.triggerLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cachedBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-success);
+  color: #ffffff; /* Keep white for text on success color */
+  flex-shrink: 0;
+}
+
+.loadingSpinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  z-index: 60;
+  min-width: var(--radix-select-trigger-width);
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.searchWrapper {
+  padding: 8px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 14px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.searchInput:focus {
+  border-color: var(--color-accent);
+  background: var(--color-surface-elevated);
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-muted);
+}
+
+.group {
+  padding: 4px 4px 0;
+}
+
+.groupLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 4px 4px 2px;
+}
+
+.modelBlock {
+  margin-bottom: 2px;
+}
+
+.itemMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vramBadge {
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--color-surface); /* or border-subtle? */
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 11px;
+}
+
+.modelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-text);
+  transition: background-color 0.15s ease;
+}
+
+.modelHeader:hover {
+  background: var(--color-surface-hover);
+}
+
+.expandButton {
+  border: none;
+  background: transparent;
+  padding: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-muted);
+}
+
+.expandButton:hover {
+  color: var(--color-text);
+}
+
+.quantizationList {
+  margin-left: 20px;
+  margin-top: 2px;
+}
+
+.itemQuant {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  transition: background-color 0.15s ease;
+}
+
+.itemQuant:hover,
+.itemQuant[data-highlighted] {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+.viewport {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  font-size: 14px;
+  color: var(--color-text);
+  transition: background-color 0.15s ease;
+}
+
+.item:hover,
+.item[data-highlighted] {
+  background: var(--color-surface-hover);
+}
+
+.item[data-state="checked"] {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.itemContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+}
+
+.itemLabel {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.itemBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-success);
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.emptyState {
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.emptyStateText {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.emptyStateSubtext {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .trigger {
+    min-width: 140px;
+  }
+
+  .content {
+    max-width: calc(100vw - 32px);
+  }
+}
+
+.filterWrapper {
+  padding: 4px 8px 8px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.filterWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.filterChip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  text-transform: capitalize;
+}
+
+.filterChip:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+.filterChipActive {
+  background: var(--color-text);
+  color: var(--color-surface);
+  border-color: var(--color-text);
+}

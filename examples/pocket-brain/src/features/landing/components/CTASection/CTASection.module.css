@@ -1,0 +1,67 @@
+.ctaSection {
+  padding: 80px 24px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #ff6b6b 50%, #4ecdc4 100%);
+  color: white;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(32px, 8vw, 56px);
+  font-weight: 900;
+  margin-bottom: 24px;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+  margin: 0;
+  font-size: clamp(18px, 4vw, 24px);
+  line-height: 1.6;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  min-width: 200px;
+  background: white !important;
+  color: var(--color-accent) !important;
+  font-size: 20px;
+  font-weight: 800;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.secondaryButton {
+  min-width: 200px;
+  background: transparent !important;
+  color: white !important;
+  border: 2px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+.secondaryButton:hover {
+  border-color: #ffffff !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  margin-top: 40px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .ctaSection {
+    padding: 60px 16px;
+  }
+}

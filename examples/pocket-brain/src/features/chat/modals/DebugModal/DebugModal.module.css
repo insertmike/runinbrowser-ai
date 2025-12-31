@@ -1,0 +1,330 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  animation: fadeIn 0.15s ease;
+  z-index: 100;
+}
+
+.modal {
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.debugIcon {
+  font-size: 18px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filterButtons {
+  display: flex;
+  gap: 4px;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.filterButton {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.1s ease;
+}
+
+.filterButton.active {
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.filterButton.log.active {
+  color: var(--color-text);
+}
+
+.filterButton.info.active {
+  color: #0ea5e9;
+}
+
+.filterButton.warn.active {
+  color: #f59e0b;
+}
+
+.filterButton.error.active {
+  color: #ef4444;
+}
+
+.clearButton {
+  appearance: none;
+  border: none;
+  background: var(--color-surface-elevated);
+  color: var(--color-text-muted);
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  transition: all 0.1s ease;
+}
+
+.clearButton:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.close {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.logsContainer {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.logEntry {
+  display: flex;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.1s ease;
+}
+
+.logEntry:hover {
+  background: var(--color-surface-elevated);
+}
+
+.logEntry.log {
+  border-left: 3px solid #6b7280;
+}
+
+.logEntry.info {
+  border-left: 3px solid #0ea5e9;
+}
+
+.logEntry.warn {
+  border-left: 3px solid #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.logEntry.error {
+  border-left: 3px solid #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.logMeta {
+  flex-shrink: 0;
+  width: 120px;
+  padding-right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.logLevel {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.logLevel.log {
+  color: #6b7280;
+}
+
+.logLevel.info {
+  color: #0ea5e9;
+}
+
+.logLevel.warn {
+  color: #f59e0b;
+}
+
+.logLevel.error {
+  color: #ef4444;
+}
+
+.logTime {
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+.logMessage {
+  flex: 1;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--color-text);
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.emptyStateIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.emptyStateTitle {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.emptyStateSubtitle {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.footer {
+  padding: 12px 16px;
+  border-top: 1px solid var(--color-border);
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logCount {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.autoScroll {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.autoScrollCheckbox {
+  margin: 0;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .backdrop {
+    padding: var(--spacing-md);
+  }
+
+  .modal {
+    max-height: 85vh;
+  }
+
+  .header {
+    padding: 12px 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .headerActions {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .filterButtons {
+    gap: 2px;
+    padding: 1px;
+  }
+
+  .filterButton {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .logEntry {
+    padding: 6px 12px;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .logMeta {
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding-right: 0;
+  }
+
+  .logsContainer {
+    font-size: 12px;
+  }
+
+  .footer {
+    padding: 10px 14px;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

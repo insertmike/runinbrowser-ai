@@ -1,0 +1,275 @@
+/* Dialog styles */
+.dialogOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.dialogContent {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 500px;
+  width: calc(100% - 32px);
+  max-height: 85vh;
+  overflow-y: auto;
+  z-index: 51;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.dialogTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.dialogDescription {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.dialogSection {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.dialogSection strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.stepsList {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+}
+
+.stepsList li {
+  margin-bottom: 6px;
+}
+
+.dialogSection code {
+  background: #e5e7eb;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: ui-monospace, monospace;
+}
+
+.warningBox {
+  padding: 10px;
+  background: #fee2e2;
+  color: #b91c1c;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid #fecaca;
+}
+
+.warningBox strong {
+  color: #b91c1c;
+  margin-bottom: 0;
+}
+
+.noteText {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.subText {
+  margin-bottom: 10px;
+}
+
+/* Copy Button */
+.copyButton {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  background: #e5e7eb;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+.copyButton:hover {
+  background: #d1d5db;
+}
+
+.copyButton:active {
+  background: #9ca3af;
+  color: white;
+}
+
+.dialogActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.dialogClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.dialogClose:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.buttonPrimary {
+  padding: 8px 16px;
+  background: #111827;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.buttonPrimary:hover {
+  background: #374151;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .dialogContent {
+    background: #1f2937;
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.3),
+      0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  .dialogTitle {
+    color: #f9fafb;
+  }
+
+  .dialogDescription {
+    color: #9ca3af;
+  }
+
+  .dialogSection {
+    background: #111827;
+    color: #d1d5db;
+  }
+
+  .dialogSection strong {
+    color: #f9fafb;
+  }
+
+  .dialogSection code {
+    background: #374151;
+    color: #f9fafb;
+  }
+
+  .warningBox {
+    background: #7f1d1d;
+    color: #fecaca;
+    border-color: #991b1b;
+  }
+
+  .warningBox strong {
+    color: #fecaca;
+  }
+
+  .copyButton {
+    background: #374151;
+    border-color: #4b5563;
+    color: #e5e7eb;
+  }
+
+  .copyButton:hover {
+    background: #4b5563;
+  }
+
+  .dialogClose {
+    color: #6b7280;
+  }
+
+  .dialogClose:hover {
+    background: #374151;
+    color: #d1d5db;
+  }
+
+  .buttonPrimary {
+    background: #f9fafb;
+    color: #111827;
+  }
+
+  .buttonPrimary:hover {
+    background: #e5e7eb;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dialogContent {
+    padding: 20px;
+    max-width: calc(100% - 24px);
+  }
+}

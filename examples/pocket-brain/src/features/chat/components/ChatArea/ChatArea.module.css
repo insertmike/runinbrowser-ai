@@ -1,0 +1,90 @@
+/* Chat box - Note: overflow is handled by ChatBox component when isEmpty prop is set */
+.chatBox {
+  flex: 1;
+  padding: 24px 0;
+  min-height: 0;
+}
+
+/* Loading state container - displays loading/error inside message area */
+.loadingStateContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Empty state - takes full height and centers content without scroll */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 64px 24px;
+  flex: 1;
+  min-height: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.emptyStateIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.emptyStateTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.emptyStateSubtitle {
+  font-size: 14px;
+  color: #6b7280;
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+/* Input area */
+.inputArea {
+  padding: 8px 0 24px;
+  background: #ffffff;
+}
+
+.suggestedActionsWrapper {
+  margin-bottom: 8px;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+/* Dark mode support */
+:global([data-theme="dark"]) .emptyStateTitle {
+  color: #f9fafb;
+}
+
+:global([data-theme="dark"]) .emptyStateSubtitle {
+  color: #9ca3af;
+}
+
+:global([data-theme="dark"]) .inputArea {
+  border-top-color: #374151;
+  background: #111827;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chatBox {
+    padding: 16px 0;
+  }
+
+  .emptyState {
+    padding: 48px 16px;
+  }
+}

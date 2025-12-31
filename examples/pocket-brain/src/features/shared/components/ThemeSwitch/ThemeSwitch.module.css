@@ -1,0 +1,94 @@
+.themeSwitch {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.themeSwitchFloating {
+  position: fixed;
+  top: var(--spacing-xl);
+  right: var(--spacing-xl);
+  z-index: 1000;
+}
+
+.themeSwitch:hover {
+  transform: scale(1.05);
+}
+
+.themeSwitch:active {
+  transform: scale(0.95);
+}
+
+.themeSwitch:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.switchTrack {
+  width: 48px;
+  height: 26px;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  position: relative;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(8px);
+}
+
+.themeSwitch:hover .switchTrack {
+  border-color: var(--color-accent);
+}
+
+.switchThumb {
+  width: 20px;
+  height: 20px;
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+  position: absolute;
+  top: 2px;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.switchThumb.light {
+  left: 2px;
+  background: #fbbf24; /* sun color */
+}
+
+.switchThumb.dark {
+  left: 24px;
+  background: #6366f1; /* moon color */
+}
+
+/* Mobile adjustments for floating placement */
+@media (max-width: 768px) {
+  .themeSwitchFloating {
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+  }
+
+  .switchTrack {
+    width: 44px;
+    height: 24px;
+  }
+
+  .switchThumb {
+    width: 18px;
+    height: 18px;
+  }
+
+  .switchThumb.dark {
+    left: 22px;
+  }
+
+  .switchThumb svg {
+    width: 12px;
+    height: 12px;
+  }
+}

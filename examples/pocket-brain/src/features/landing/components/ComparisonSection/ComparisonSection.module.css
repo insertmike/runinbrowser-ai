@@ -1,0 +1,129 @@
+.comparisonSection {
+  padding: 60px 24px;
+  background: var(--color-surface-elevated);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.container {
+  max-width: 1000px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(28px, 6vw, 48px);
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 18px;
+  color: var(--color-text-muted);
+}
+
+.mobileGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.mobileCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.mobileCriteria {
+  font-weight: 700;
+  color: var(--color-text);
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.mobileOptions {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr;
+}
+
+.mobileOption {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.mobileOptionHeader {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.tableContainer {
+  min-width: 640px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.tableHeader {
+  background: var(--color-surface-elevated);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tableHeader th {
+  text-align: left;
+  padding: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.tableRow {
+  background: transparent;
+  border-top: 1px solid var(--color-border);
+}
+
+.tableRowAlt {
+  background: var(--color-surface-elevated);
+  border-top: 1px solid var(--color-border);
+}
+
+.tableCellCriteria {
+  padding: 16px;
+  color: var(--color-text);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tableCell {
+  padding: 16px;
+  color: var(--color-text);
+}
+
+.tableCell span {
+  padding: 0;
+}
+
+@media (max-width: 767px) {
+  .comparisonSection {
+    padding: 40px 16px;
+  }
+}

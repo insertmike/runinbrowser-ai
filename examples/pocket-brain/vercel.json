@@ -1,0 +1,11 @@
+{
+  "installCommand": "cd ../.. && npm install && npm run build && cd examples/pocket-brain && npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

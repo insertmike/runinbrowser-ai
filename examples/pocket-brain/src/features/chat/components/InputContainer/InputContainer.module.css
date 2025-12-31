@@ -1,0 +1,34 @@
+/* Input container styles */
+.inputContainer {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  align-items: flex-end;
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  margin-bottom: calc(var(--spacing-xl) + var(--safe-area-bottom));
+}
+
+.inputContainer > :first-child {
+  flex: 1 1 auto;
+}
+
+@media (max-width: 768px) {
+  .inputContainer {
+    padding: var(--spacing-lg);
+    gap: var(--spacing-sm);
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .inputContainer {
+    background: transparent;
+    border: none;
+  }
+}

@@ -1,0 +1,491 @@
+/* Production-style chat interface - clean and minimal */
+
+.chatRoot {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  background: #ffffff;
+  color: #1f2937;
+  overscroll-behavior: none;
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 768px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 24px;
+  overflow: hidden;
+}
+
+/* Dialog styles */
+.dialogOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.dialogContent {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 500px;
+  width: calc(100% - 32px);
+  max-height: 85vh;
+  overflow-y: auto;
+  z-index: 51;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.dialogTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.dialogDescription {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.dialogSection {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.dialogSection strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.dialogSection ol {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+}
+
+.dialogSection code {
+  background: #e5e7eb;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: ui-monospace, monospace;
+}
+
+.dialogActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.dialogClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.dialogClose:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Settings */
+.settingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.settingsItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.settingsItemDanger {
+  border: 1px solid #fee2e2;
+  background: #fef2f2;
+}
+
+.settingsItemLabel {
+  flex: 1;
+  min-width: 0;
+}
+
+.settingsItemTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.settingsItemDesc {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+/* Toggle switch */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleSlider {
+  position: absolute;
+  inset: 0;
+  background: #d1d5db;
+  border-radius: 24px;
+  transition: background-color 0.2s ease;
+}
+
+.toggleSlider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.toggle input:checked + .toggleSlider {
+  background: #3b82f6;
+}
+
+.toggle input:checked + .toggleSlider:before {
+  transform: translateX(20px);
+}
+
+/* Buttons */
+.buttonPrimary {
+  padding: 8px 16px;
+  background: #111827;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.buttonPrimary:hover {
+  background: #374151;
+}
+
+.buttonSecondary {
+  padding: 6px 12px;
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.buttonSecondary:hover:not(:disabled) {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.buttonSecondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buttonDanger {
+  padding: 6px 12px;
+  background: #ffffff;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.buttonDanger:hover:not(:disabled) {
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
+
+.buttonDanger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dialogFooter {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 12px;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* Dark mode support */
+:global([data-theme="dark"]) .chatRoot {
+  background: #111827;
+  color: #f9fafb;
+}
+
+:global([data-theme="dark"]) .header {
+  border-bottom-color: #374151;
+  background: #111827;
+}
+
+:global([data-theme="dark"]) .brandName {
+  color: #f9fafb;
+}
+
+:global([data-theme="dark"]) .brandName:hover {
+  opacity: 0.7;
+}
+
+:global([data-theme="dark"]) .settingsButton {
+  color: #9ca3af;
+}
+
+:global([data-theme="dark"]) .settingsButton:hover {
+  background: #1f2937;
+  color: #d1d5db;
+}
+
+:global([data-theme="dark"]) .main {
+  background: #111827;
+}
+
+:global([data-theme="dark"]) .loadingSpinner {
+  border-color: #374151;
+  border-top-color: #3b82f6;
+}
+
+:global([data-theme="dark"]) .loadingTitle {
+  color: #f9fafb;
+}
+
+:global([data-theme="dark"]) .loadingSubtitle {
+  color: #9ca3af;
+}
+
+:global([data-theme="dark"]) .loadingProgressBar {
+  background: #374151;
+}
+
+:global([data-theme="dark"]) .emptyStateTitle {
+  color: #f9fafb;
+}
+
+:global([data-theme="dark"]) .emptyStateSubtitle {
+  color: #9ca3af;
+}
+
+:global([data-theme="dark"]) .inputArea {
+  border-top-color: #374151;
+  background: #111827;
+}
+
+:global([data-theme="dark"]) .dialogContent {
+  background: #1f2937;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.3),
+    0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+:global([data-theme="dark"]) .dialogTitle {
+  color: #f9fafb;
+}
+
+:global([data-theme="dark"]) .dialogDescription {
+  color: #9ca3af;
+}
+
+:global([data-theme="dark"]) .dialogSection {
+  background: #111827;
+  color: #d1d5db;
+}
+
+:global([data-theme="dark"]) .dialogSection strong {
+  color: #f9fafb;
+}
+
+:global([data-theme="dark"]) .dialogSection code {
+  background: #374151;
+  color: #f9fafb;
+}
+
+:global([data-theme="dark"]) .dialogClose {
+  color: #6b7280;
+}
+
+:global([data-theme="dark"]) .dialogClose:hover {
+  background: #374151;
+  color: #d1d5db;
+}
+
+:global([data-theme="dark"]) .settingsItem {
+  background: #1f2937;
+}
+
+:global([data-theme="dark"]) .settingsItemDanger {
+  background: #7f1d1d;
+  border-color: #991b1b;
+}
+
+:global([data-theme="dark"]) .settingsItemTitle {
+  color: #f9fafb;
+}
+
+:global([data-theme="dark"]) .settingsItemDesc {
+  color: #9ca3af;
+}
+
+:global([data-theme="dark"]) .toggleSlider {
+  background: #4b5563;
+}
+
+:global([data-theme="dark"]) .buttonPrimary {
+  background: #f9fafb;
+  color: #111827;
+}
+
+:global([data-theme="dark"]) .buttonPrimary:hover {
+  background: #e5e7eb;
+}
+
+:global([data-theme="dark"]) .buttonSecondary {
+  background: #1f2937;
+  color: #d1d5db;
+  border-color: #374151;
+}
+
+:global([data-theme="dark"]) .buttonSecondary:hover:not(:disabled) {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+:global([data-theme="dark"]) .buttonDanger {
+  background: #1f2937;
+  color: #fca5a5;
+  border-color: #991b1b;
+}
+
+:global([data-theme="dark"]) .buttonDanger:hover:not(:disabled) {
+  background: #7f1d1d;
+  border-color: #b91c1c;
+}
+
+:global([data-theme="dark"]) .dialogFooter {
+  border-top-color: #374151;
+  color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .headerContent {
+    padding: 12px 16px;
+  }
+
+  .main {
+    padding: 0 16px;
+  }
+
+  .chatBox {
+    padding: 16px 0;
+  }
+
+  .emptyState {
+    padding: 48px 16px;
+    min-height: 300px;
+  }
+
+  .dialogContent {
+    padding: 20px;
+    max-width: calc(100% - 24px);
+  }
+
+  .settingsItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

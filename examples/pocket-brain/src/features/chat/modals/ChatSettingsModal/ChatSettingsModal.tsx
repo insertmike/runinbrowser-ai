@@ -1,6 +1,6 @@
 import React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import type { MLCModelId } from "runinbrowser";
+import type { MLCModelId } from "runinbrowser-ai";
 import { ModelSelect } from "../../../shared/components/ModelSelect";
 import { ThemeSwitch } from "../../../shared/components/ThemeSwitch";
 import styles from "./ChatSettingsModal.module.css";

@@ -1,8 +1,8 @@
-# Brain Pocket (runinbrowser example)
+# Brain Pocket (runinbrowser-ai example)
 
-This is a complete, production-ready example of how to build an AI-powered landing page and chat interface using `runinbrowser`.
+This is a complete, production-ready example of how to build an AI-powered landing page and chat interface using `runinbrowser-ai`.
 
-**Note:** This showcase is **vibe-coded 🎨**. While the core `runinbrowser` library is where the primary engineering focus and resources are devoted, this example was built to quickly demonstrate the potential of browser-based AI.
+**Note:** This showcase is **vibe-coded 🎨**. While the core `runinbrowser-ai` library is where the primary engineering focus and resources are devoted, this example was built to quickly demonstrate the potential of browser-based AI.
 
 ## Features
 
@@ -38,12 +38,12 @@ This is a complete, production-ready example of how to build an AI-powered landi
 - `src/hooks`: Custom hooks for browser detection and media queries.
 - `src/assets/icons`: SVG icon system.
 
-## runinbrowser Integration
+## runinbrowser-ai Integration
 
-This example showcases the primary hooks from the `runinbrowser` SDK:
+This example showcases the primary hooks from the `runinbrowser-ai` SDK:
 
 ```tsx
-import { useMLCEngine, useChat } from "runinbrowser";
+import { useMLCEngine, useChat } from "runinbrowser-ai";
 
 // ... engine initialization
 // ... chat state management

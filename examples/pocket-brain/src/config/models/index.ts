@@ -1,6 +1,6 @@
 import models from "./mlc-models.json";
 import type { ModelConfig, MLCConfig, GroupedModels, ModelType } from "./types";
-import { prebuiltAppConfig } from "runinbrowser";
+import { prebuiltAppConfig } from "runinbrowser-ai";
 
 type RawModelConfig = {
   engine: "mlc" | "transformers";

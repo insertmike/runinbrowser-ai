@@ -283,7 +283,7 @@ export interface ExtendedAppConfig extends Omit<AppConfig, "model_list"> {
  * 
  * @example
  * \`\`\`typescript
- * import { prebuiltAppConfig } from 'runinbrowser';
+ * import { prebuiltAppConfig } from 'runinbrowser-ai';
  * 
  * // Access model list
  * const models = prebuiltAppConfig.model_list;
@@ -337,7 +337,7 @@ export function getMLCModel(modelId: string): AppConfig["model_list"][number] | 
  * 
  * @example
  * \`\`\`typescript
- * import { MLC_MODEL_IDS, type MLCModelId } from 'runinbrowser';
+ * import { MLC_MODEL_IDS, type MLCModelId } from 'runinbrowser-ai';
  * 
  * // Type-safe: TypeScript knows these are valid
  * const modelId: MLCModelId = MLC_MODEL_IDS[0]; // Autocomplete works!
@@ -374,13 +374,13 @@ const extraModels = actualModelIds.filter((id) => !(_MLC_MODEL_IDS as readonly s
 
 if (missingModels.length > 0) {
   console.warn(
-    \`[runinbrowser] MLC_MODEL_IDS contains models not in MLC-AI config: \${missingModels.join(", ")}\`
+    \`[runinbrowser-ai] MLC_MODEL_IDS contains models not in MLC-AI config: \${missingModels.join(", ")}\`
   );
 }
 
 if (extraModels.length > 0) {
   console.warn(
-    \`[runinbrowser] MLC-AI config contains models not in MLC_MODEL_IDS: \${extraModels.join(", ")}\`
+    \`[runinbrowser-ai] MLC-AI config contains models not in MLC_MODEL_IDS: \${extraModels.join(", ")}\`
   );
 }
 
@@ -404,7 +404,7 @@ export const MLC_MODEL_IDS = _MLC_MODEL_IDS;
  * 
  * @example
  * \`\`\`typescript
- * import type { MLCModelId } from 'runinbrowser';
+ * import type { MLCModelId } from 'runinbrowser-ai';
  * 
  * function loadModel(id: MLCModelId) {
  *   // TypeScript will only accept valid model IDs - autocomplete works!

@@ -27,18 +27,18 @@ export type {
 
 // Debug helper
 /**
- * Enable debug logging for the runinbrowser library.
- * This sets localStorage.debug = 'runinbrowser' in browser environments.
+ * Enable debug logging for the runinbrowser-ai library.
+ * This sets localStorage.debug = 'runinbrowser-ai' in browser environments.
  *
  * @example
  * ```typescript
- * import { enableDebug } from 'runinbrowser';
+ * import { enableDebug } from 'runinbrowser-ai';
  * enableDebug(); // Now all debug logs will be visible in the console
  * ```
  */
 export function enableDebug(): void {
   if (typeof window !== "undefined" && window.localStorage) {
-    window.localStorage.debug = "runinbrowser";
+    window.localStorage.debug = "runinbrowser-ai";
   }
 }
 

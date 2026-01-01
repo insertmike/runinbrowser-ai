@@ -1,5 +1,5 @@
 {
-  "name": "runinbrowser",
+  "name": "runinbrowser-ai",
   "version": "0.1.0",
   "type": "module",
   "description": "Run AI models in the browser with React hooks",

@@ -1,4 +1,4 @@
-# Contributing to runinbrowser
+# Contributing to runinbrowser-ai
 
 We welcome contributions! Whether it's reporting bugs, discussing code, submitting fixes, or proposing new features.
 

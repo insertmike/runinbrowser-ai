@@ -1,6 +1,6 @@
 <div align="center">
 
-# runinbrowser 🚀
+# runinbrowser-ai 🚀
 
 ### Run any open-source AI model in React directly in the browser. No servers, no setup.
 
@@ -10,17 +10,17 @@
 
 ## Overview
 
-`runinbrowser` is a **React-first TypeScript SDK** for **running AI models directly in the browser**. Built with React hooks and OpenAI-compatible types, levereging WebGPU to enable you to build AI-powered applications that run entirely client-side with **no backend required**.
+`runinbrowser-ai` is a **React-first TypeScript SDK** for **running AI models directly in the browser**. Built with React hooks and OpenAI-compatible types, levereging WebGPU to enable you to build AI-powered applications that run entirely client-side with **no backend required**.
 
-## Why `runinbrowser`?
+## Why `runinbrowser-ai`?
 
-- `runinbrowser` is the **only fully Typescript-based** React SDK for browser AI. This means better developer experience, safer integrations, and full type-checking across your entire AI workflow
+- `runinbrowser-ai` is the **only fully Typescript-based** React SDK for browser AI. This means better developer experience, safer integrations, and full type-checking across your entire AI workflow
 
-- `runinbrowser` is **OpenAI API Compatible:** Integrate your application using OpenAI compatible types for functionalities such as streaming, JSON-mode, and soon (tool calling, seeding, etc...)
+- `runinbrowser-ai` is **OpenAI API Compatible:** Integrate your application using OpenAI compatible types for functionalities such as streaming, JSON-mode, and soon (tool calling, seeding, etc...)
 
-- `runinbrowser` has **Plug and Play integration:** Integrate and run AI models in your React App by following the comprehensive **examples** and **out-of-the-box hooks** that lift the burden of managing AI state so you can focus on UI.
+- `runinbrowser-ai` has **Plug and Play integration:** Integrate and run AI models in your React App by following the comprehensive **examples** and **out-of-the-box hooks** that lift the burden of managing AI state so you can focus on UI.
 
-- `runinbrowser` comes with latest advancements from its underlying engines such as **Web Worker & Service Worker** support and more.
+- `runinbrowser-ai` comes with latest advancements from its underlying engines such as **Web Worker & Service Worker** support and more.
 
 Not to forget that everything is 🔒 **100% Local & Private**, **🌐 Offline Friendly**, **📦 Production Ready** and with **💰 Zero Server Costs**.
 
@@ -31,13 +31,13 @@ Not to forget that everything is 🔒 **100% Local & Private**, **🌐 Offline F
 You will need Node.js 18+ and npm (or another package manager) installed on your local development machine.
 
 ```bash
-npm install runinbrowser
+npm install runinbrowser-ai
 ```
 
 ### Basic Usage
 
 ```tsx
-import { useMLCEngine, useChat } from "runinbrowser";
+import { useMLCEngine, useChat } from "runinbrowser-ai";
 
 function ChatApp() {
   // Manage engine lifecycle with the useMLCEngine hook
@@ -66,7 +66,7 @@ Manages MLC engine lifecycle, model loading, and caching.
 #### Usage
 
 ```tsx
-import { useMLCEngine } from "runinbrowser";
+import { useMLCEngine } from "runinbrowser-ai";
 
 const { engine, isLoading, progress } = useMLCEngine({
   modelId: "Llama-3.2-1B-Instruct-q4f32_1-MLC",
@@ -137,7 +137,7 @@ Manages chat messages, streaming, and conversation state. Engine agnostic.
 #### Usage
 
 ```tsx
-import { useChat } from "runinbrowser";
+import { useChat } from "runinbrowser-ai";
 
 const { messages, send, isStreaming } = useChat({
   engine,
@@ -231,7 +231,7 @@ Checks if WebGPU is available in the current browser.
 #### Usage
 
 ```tsx
-import { useWebGPUSupport } from "runinbrowser";
+import { useWebGPUSupport } from "runinbrowser-ai";
 
 const isSupported = useWebGPUSupport();
 
@@ -309,16 +309,16 @@ This project is built on top of [MLC-AI](https://github.com/mlc-ai/web-llm) and 
 ## Installation
 
 ```bash
-npm install runinbrowser
+npm install runinbrowser-ai
 # or
-yarn add runinbrowser
+yarn add runinbrowser-ai
 # or
-pnpm add runinbrowser
+pnpm add runinbrowser-ai
 ```
 
 ## TypeScript Support
 
-`runinbrowser` is written in TypeScript and includes comprehensive type definitions. All APIs are fully typed, including:
+`runinbrowser-ai` is written in TypeScript and includes comprehensive type definitions. All APIs are fully typed, including:
 
 - `GenerationOptions` - OpenAI-compatible generation parameters
 - `ChatMessage` - Message types with role and content
@@ -346,7 +346,7 @@ import type {
   UseMLCEngineReturn,
   // Model types
   MLCModelId,
-} from "runinbrowser";
+} from "runinbrowser-ai";
 ```
 
 ## Additional Exports
@@ -356,7 +356,7 @@ import type {
 The MLC engine adapter class that implements the `Engine` interface. You can use this directly if you need more control:
 
 ```tsx
-import { MLCEngineAdapter } from "runinbrowser";
+import { MLCEngineAdapter } from "runinbrowser-ai";
 
 const engine = new MLCEngineAdapter();
 await engine.loadModel("Llama-3.2-1B-Instruct-q4f32_1-MLC");
@@ -367,9 +367,9 @@ await engine.loadModel("Llama-3.2-1B-Instruct-q4f32_1-MLC");
 Enable debug logging for troubleshooting:
 
 ```tsx
-import { enableDebug } from "runinbrowser";
+import { enableDebug } from "runinbrowser-ai";
 
-enableDebug(); // Sets localStorage.debug = 'runinbrowser'
+enableDebug(); // Sets localStorage.debug = 'runinbrowser-ai'
 ```
 
 ### `MLC_MODEL_IDS`
@@ -377,7 +377,7 @@ enableDebug(); // Sets localStorage.debug = 'runinbrowser'
 Array of all available MLC model IDs:
 
 ```tsx
-import { MLC_MODEL_IDS } from "runinbrowser";
+import { MLC_MODEL_IDS } from "runinbrowser-ai";
 
 console.log(MLC_MODEL_IDS); // ["Llama-3.2-1B-Instruct-q4f32_1-MLC", ...]
 ```
@@ -387,7 +387,7 @@ console.log(MLC_MODEL_IDS); // ["Llama-3.2-1B-Instruct-q4f32_1-MLC", ...]
 Full MLC-AI configuration with extended model records:
 
 ```tsx
-import { prebuiltAppConfig } from "runinbrowser";
+import { prebuiltAppConfig } from "runinbrowser-ai";
 
 // Access model list with group and quantization_id fields
 const models = prebuiltAppConfig.model_list;
@@ -404,7 +404,7 @@ const llamaModel = models.find((m) => m.model_id.includes("Llama-3.2"));
 Get a model configuration by model ID:
 
 ```tsx
-import { getMLCModel } from "runinbrowser";
+import { getMLCModel } from "runinbrowser-ai";
 
 const model = getMLCModel("Llama-3.2-1B-Instruct-q4f32_1-MLC");
 ```
@@ -412,7 +412,7 @@ const model = getMLCModel("Llama-3.2-1B-Instruct-q4f32_1-MLC");
 ### Additional Types
 
 ```tsx
-import type { ExtendedModelRecord, ExtendedAppConfig } from "runinbrowser";
+import type { ExtendedModelRecord, ExtendedAppConfig } from "runinbrowser-ai";
 ```
 
 ## Browser Compatibility
@@ -438,7 +438,7 @@ import type { ExtendedModelRecord, ExtendedAppConfig } from "runinbrowser";
 Check browser support:
 
 ```tsx
-import { useWebGPUSupport } from "runinbrowser";
+import { useWebGPUSupport } from "runinbrowser-ai";
 
 const isSupported = useWebGPUSupport();
 if (!isSupported) {
@@ -449,7 +449,7 @@ if (!isSupported) {
 ### Enable Debug Logging
 
 ```tsx
-import { enableDebug } from "runinbrowser";
+import { enableDebug } from "runinbrowser-ai";
 enableDebug();
 ```
 

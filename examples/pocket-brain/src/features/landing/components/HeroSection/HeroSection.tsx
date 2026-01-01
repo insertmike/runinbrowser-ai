@@ -51,7 +51,7 @@ export function HeroSection({ onScrollToDemo, onScrollToGitHub }: HeroSectionPro
               target="_blank"
               rel="noopener noreferrer"
             >
-              runinbrowser
+              runinbrowser-ai
             </a>
           </p>
         </div>

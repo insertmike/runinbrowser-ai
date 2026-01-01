@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
-import { useChat, useMLCEngine, useWebGPUSupport } from "runinbrowser";
-import type { MLCModelId } from "runinbrowser";
+import { useChat, useMLCEngine, useWebGPUSupport } from "runinbrowser-ai";
+import type { MLCModelId } from "runinbrowser-ai";
 import { buildGroupedModelsFromMLC } from "../../config/models";
 import { ChatHeader } from "./components/ChatHeader";
 import { ChatArea } from "./components/ChatArea";

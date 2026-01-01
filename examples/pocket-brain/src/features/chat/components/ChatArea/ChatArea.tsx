@@ -1,4 +1,4 @@
-import type { MLCModelId } from "runinbrowser";
+import type { MLCModelId } from "runinbrowser-ai";
 import { Message } from "../Message";
 import { ChatBox } from "../ChatBox/ChatBox";
 import { Input } from "../Input/Input";

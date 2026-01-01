@@ -59,7 +59,7 @@ export interface UseMLCEngineReturn {
 /**
  * React hook for managing an MLC engine instance.
  *
- * This is the recommended way to use runinbrowser with React.
+ * This is the recommended way to use runinbrowser-ai with React.
  * It handles engine lifecycle, model loading, progress tracking, and cache management.
  *
  * @example

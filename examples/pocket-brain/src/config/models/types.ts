@@ -1,4 +1,4 @@
-import { prebuiltAppConfig } from "runinbrowser";
+import { prebuiltAppConfig } from "runinbrowser-ai";
 
 export interface BaseModelConfig {
   modelName: string;
@@ -57,7 +57,7 @@ export type GroupedModels = Record<string, { group: ModelGroupInfo; models: Grou
  * @example
  * ```typescript
  * import type { MLCModelRecord } from './types';
- * import { prebuiltAppConfig } from 'runinbrowser';
+ * import { prebuiltAppConfig } from 'runinbrowser-ai';
  *
  * const firstModel: MLCModelRecord = prebuiltAppConfig.model_list[0];
  * console.log(firstModel.model_id); // Type-safe access

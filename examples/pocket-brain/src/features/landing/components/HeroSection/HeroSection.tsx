@@ -47,7 +47,7 @@ export function HeroSection({ onScrollToDemo, onScrollToGitHub }: HeroSectionPro
           <p className={styles.poweredBy}>
             Powered by{" "}
             <a
-              href="https://github.com/insertmike/runinbrowser"
+              href="https://github.com/insertmike/runinbrowser-ai"
               target="_blank"
               rel="noopener noreferrer"
             >

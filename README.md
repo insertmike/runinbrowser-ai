@@ -287,8 +287,8 @@ We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for gu
 Quick start for local development:
 
 ```bash
-git clone https://github.com/yourusername/runinbrowser.git
-cd runinbrowser
+git clone https://github.com/insertmike/runinbrowser-ai.git
+cd runinbrowser-ai
 npm install  # Auto-generates required files
 npm run build
 ```

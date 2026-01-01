@@ -64,11 +64,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/insertmike/runinbrowser.git"
+    "url": "https://github.com/insertmike/runinbrowser-ai.git"
   },
-  "homepage": "https://github.com/insertmike/runinbrowser#readme",
+  "homepage": "https://github.com/insertmike/runinbrowser-ai#readme",
   "bugs": {
-    "url": "https://github.com/insertmike/runinbrowser/issues"
+    "url": "https://github.com/insertmike/runinbrowser-ai/issues"
   },
   "peerDependencies": {
     "react": ">=16.8.0"

@@ -33,7 +33,7 @@ export const SupportModal: React.FC<SupportModalProps> = ({ open, onOpenChange }
             </a>
 
             <a
-              href="https://github.com/insertmike/runinbrowser"
+              href="https://github.com/insertmike/runinbrowser-ai"
               target="_blank"
               rel="noopener noreferrer"
               className={`${styles.actionButton} ${styles.github}`}

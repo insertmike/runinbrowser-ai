@@ -1,6 +1,6 @@
 {
   "name": "runinbrowser-ai",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Run AI models in the browser with React hooks",
   "main": "./dist/index.cjs",

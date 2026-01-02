@@ -29,7 +29,7 @@
 
 Not to forget that everything is 🔒 **100% Local & Private**, **🌐 Offline Friendly**, **📦 Production Ready** and with **💰 Zero Server Costs**.
 
-![ezgif-240bfe1209ae3de8](https://github.com/user-attachments/assets/97eb4851-d731-4794-8b32-16f4f7629d29)
+![529243385-97eb4851-d731-4794-8b32-16f4f7629d29](https://github.com/user-attachments/assets/e0fdf169-47f0-4ad4-b4cc-413404622eb4)
 
 ## Quick start
 

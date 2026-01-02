@@ -2,9 +2,14 @@
 
 # runinbrowser-ai 🚀
 
+![CI](https://github.com/insertmike/runinbrowser-ai/actions/workflows/ci.yml/badge.svg)
+[![NPM Package](https://img.shields.io/badge/NPM_Package-Published-cc3534)](https://www.npmjs.com/package/runinbrowser-ai)
+[!["PocketBrain Deployed"](https://img.shields.io/badge/Pocket_Brain_-Deployed-%2332a852)](https://pocketbrain.app/)
+[![Support YouTube](https://img.shields.io/badge/Support_Creator-Subscribe-red?style=social&logo=youtube)](https://www.youtube.com/@mihailyonchev)
+
 ### Run any open-source AI model in React directly in the browser. No servers, no setup.
 
-[Live Demo (Pocket Brain)](https://runinbrowser.vercel.app/)
+[Live Demo – Pocket Brain](https://pocketbrain.app/)
 
 </div>
 
@@ -265,7 +270,7 @@ function App() {
 
 ## Demos & examples
 
-- **Live demo:** [runinbrowser.vercel.app](https://runinbrowser.vercel.app) (Brain Pocket experience)
+- **Live demo:** [pocketbrain.app](https://pocketbrain.app) (Pocket Brain - powered by runinbrowser-ai)
 - **Examples in repo:** `examples/pocket-brain` (full UI with roadmap/FAQ sections) — **Note:** This example is vibe-coded 🎨
 
 ## Requirements

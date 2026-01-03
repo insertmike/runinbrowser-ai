@@ -50,8 +50,8 @@ export const YouTubeBehindScenesSection: React.FC = () => {
                     Subscribe to Mihail Yonchev
                   </a>
                   <a
-                    href=""
-                    // target="_blank"
+                    href="https://github.com/insertmike/runinbrowser-ai/tree/main/examples/pocket-brain"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className={styles.githubButton}
                   >

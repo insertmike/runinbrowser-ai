@@ -20,8 +20,8 @@ export function HeroSection({ onScrollToDemo, onScrollToGitHub }: HeroSectionPro
           </h1>
 
           <p className={styles.description}>
-            Private, offline, and ready anywhere. We are on a mission to run any AI model in your
-            browser
+            Run AI models in your browser. Chat with them and get answers instantly. Private,
+            offline and open-source.
           </p>
 
           <div className={styles.buttonContainer}>

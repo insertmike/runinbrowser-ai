@@ -54,8 +54,8 @@ export const ComparisonSection: React.FC = () => {
                 <thead>
                   <tr className={styles.tableHeader}>
                     <th>Criteria</th>
-                    <th>Browser AI</th>
-                    <th>Cloud AI</th>
+                    <th>Brain Pocket</th>
+                    <th>Cloud AI (ChatGPT)</th>
                   </tr>
                 </thead>
                 <tbody>

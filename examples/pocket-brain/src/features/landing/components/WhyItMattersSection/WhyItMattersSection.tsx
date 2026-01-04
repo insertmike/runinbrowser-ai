@@ -45,8 +45,8 @@ export const WhyItMattersSection: React.FC = () => {
         <div className={styles.header}>
           <h2 className={styles.title}>Why it truly matters</h2>
           <p className={styles.description}>
-            Today's AI comes with strings attached: your data, money and trust. We're building
-            tomorrow's AI with the freedom you deserve - in your browser.
+            Today's AI comes with strings attached: your data, money and trust. Brain Pocket is the
+            AI with the freedom you deserve - in your browser.
           </p>
         </div>
 
@@ -92,7 +92,8 @@ export const WhyItMattersSection: React.FC = () => {
           <p className={styles.footerDescription}>
             We're at the very start of what's possible with local AI. While server models are still
             more powerful, the gap in speed and capability is closing fast, and soon world-class AI
-            won't come at the cost of your privacy
+            won't come at the cost of your privacy. Brain pocket will keep up with the latest
+            advancements in AI.
           </p>
         </div>
       </div>

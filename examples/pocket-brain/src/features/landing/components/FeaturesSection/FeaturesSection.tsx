@@ -25,7 +25,9 @@ export const FeaturesSection: React.FC = () => {
       <div className={`container ${styles.container}`}>
         <div className={styles.header}>
           <h2 className={styles.title}>This shouldn't be possible</h2>
-          <p className={styles.subtitle}>But here we are, making the impossible feel inevitable</p>
+          <p className={styles.subtitle}>
+            But here we are, Brain Pocket makes the impossible feel inevitable
+          </p>
         </div>
 
         <div className={styles.grid}>

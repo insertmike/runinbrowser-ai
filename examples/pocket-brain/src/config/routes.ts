@@ -5,7 +5,7 @@
 
 export const RoutePath = {
   HOME: "/",
-  CHAT: "/chat",
+  CHAT: "/app",
 } as const;
 
 export type RoutePathType = (typeof RoutePath)[keyof typeof RoutePath];

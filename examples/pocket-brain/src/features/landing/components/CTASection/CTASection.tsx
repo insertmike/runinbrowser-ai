@@ -36,8 +36,18 @@ export function CTASection({ onScrollToBluePaper }: CTASectionProps) {
             📊 Get free Blue Paper
           </Button>
         </div>
-
         <div className={styles.footer}>No sign-up required • Works offline • 100% private</div>
+        <div className={styles.creatorRow}>
+          Built by{" "}
+          <a
+            href="https://www.linkedin.com/in/myonchev99/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.creatorLink}
+          >
+            Mihail Yonchev
+          </a>
+        </div>
       </div>
     </section>
   );

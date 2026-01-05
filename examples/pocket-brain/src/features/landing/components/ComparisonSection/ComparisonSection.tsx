@@ -11,9 +11,9 @@ export const ComparisonSection: React.FC = () => {
     <section className={styles.comparisonSection}>
       <div className={`container ${styles.container}`}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Browser AI vs Cloud AI</h2>
+          <h2 className={styles.title}>Pocket Brain vs ChatGPT</h2>
           <p className={styles.subtitle}>
-            A quick side‑by‑side comparison of Pocket Brain vs Cloud AI.
+            A quick side‑by‑side comparison of Browser AI vs Cloud AI.
           </p>
         </div>
 
@@ -54,8 +54,8 @@ export const ComparisonSection: React.FC = () => {
                 <thead>
                   <tr className={styles.tableHeader}>
                     <th>Criteria</th>
-                    <th>Brain Pocket</th>
-                    <th>Cloud AI (ChatGPT)</th>
+                    <th>Pocket Brain (Browser AI)</th>
+                    <th>ChatGPT (Cloud AI)</th>
                   </tr>
                 </thead>
                 <tbody>

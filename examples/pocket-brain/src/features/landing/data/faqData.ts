@@ -22,7 +22,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "Which browsers are supported?",
     answer:
-      "Pocket Brain works best in modern browsers that support WebGPU, including Chrome, Edge, Safari and Firefox. Some browsers may require you to enable experimental WebGPU feature, we guide you through the process in the chat page.",
+      "Pocket Brain works best in modern browsers that support WebGPU, including Chrome, Edge, Safari and Firefox. Some browsers may require you to enable experimental WebGPU feature, we guide you through the process in the app.",
   },
   {
     question: "How big are the models?",

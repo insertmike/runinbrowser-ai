@@ -2,6 +2,13 @@
   "installCommand": "cd ../.. && npm install && npm run build && cd examples/pocket-brain && npm install",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/chat",
+      "destination": "/app",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

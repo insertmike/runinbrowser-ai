@@ -45,7 +45,7 @@ export default function Landing() {
 
     try {
       const response = await fetch(
-        "https://nituvxufentzpjengrkf.supabase.co/functions/v1/runinbrowser-email-collection",
+        "https://qhablahneaxtlctthytc.supabase.co/functions/v1/super-responder",
         {
           method: "POST",
           headers: {

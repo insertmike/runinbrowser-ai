@@ -36,7 +36,7 @@ export function NewsletterSection({
             <div className={styles.successMessage}>
               <div className={styles.successIcon}>✅</div>
               <p className={styles.successText}>
-                Thanks! You'll get the Blue Paper in your inbox in the next 24 hours
+                You'll get the Blue Paper in your inbox in the next 24 hours!
               </p>
             </div>
           ) : (

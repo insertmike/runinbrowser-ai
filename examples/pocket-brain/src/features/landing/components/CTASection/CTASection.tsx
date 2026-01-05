@@ -45,7 +45,7 @@ export function CTASection({ onScrollToBluePaper }: CTASectionProps) {
             rel="noopener noreferrer"
             className={styles.creatorLink}
           >
-            Mihail
+            Mihail Yonchev
           </a>
         </div>
       </div>

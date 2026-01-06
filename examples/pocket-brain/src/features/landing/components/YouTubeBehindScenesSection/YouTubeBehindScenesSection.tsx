@@ -35,7 +35,7 @@ export const YouTubeBehindScenesSection: React.FC = () => {
                 Pocket Brain is completely{" "}
                 <strong className={styles.supportStrong}>free and open source</strong>. If you find
                 it useful, the best way to support me is by subscribing to my YouTube channel where
-                I share more privacy-focused tech projects and tutorials!
+                I'll be sharing more tech projects and tutorials!
               </p>
 
               <div className={styles.actions}>

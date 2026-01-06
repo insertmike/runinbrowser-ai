@@ -48,6 +48,11 @@ const FAQ_ITEMS = [
       "Linux users: Ensure you have the latest Vulkan drivers installed. Safari users: You may need to enable 'WebGPU' in the Develop menu > Feature Flags. For best results, we recommend using the latest version of Chrome or Edge.",
   },
   {
+    question: "Why a browser app instead of a native app?",
+    answer:
+      "Our goal is maximum accessibility—no installations required, just open a link and run it. While browser environments can be more limited in memory management, especially on mobile, we are exploring native wrappers for the future to improve reliability. For now, we're focused on pushing the limits of what's possible directly in the web.",
+  },
+  {
     question: "How to become amazing humanbeing?",
     answer:
       "Join the community! You can support the project by starring it on GitHub or subscribing to the creator's YouTube channel for upcoming content in 2026.",

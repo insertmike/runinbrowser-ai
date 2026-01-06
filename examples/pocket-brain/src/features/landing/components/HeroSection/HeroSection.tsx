@@ -15,7 +15,7 @@ export function HeroSection({ onScrollToDemo, onScrollToGitHub }: HeroSectionPro
           <div className={`badge animate-slide-up ${styles.badge}`}>🛡️ Private by Default</div>
 
           <h1 className={styles.title}>
-            AI that runs in your browser -{" "}
+            Run any AI in your browser -{" "}
             <span className={styles.titleGradient}>even at 30,000 feet</span>
           </h1>
 
